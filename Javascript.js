@@ -127,7 +127,7 @@ new_question_button.addEventListener('click', function () {
     </div>
   `;
 
-  add_button_container.insertAdjacentHTML('afterbegin', questionBlock);
+  add_button_container.insertAdjacentHTML('beforeend', questionBlock);
 
   // Re-attach event listener for newly added "Add Answer Choice" buttons
   attachAnswerChoiceListener();
@@ -144,8 +144,8 @@ function correct_btn_clicked(button) {
   if (button.isGreen === undefined) {
     button.isGreen = true;
   }
-  button.style.backgroundColor = button.isGreen ? 'rgb(52, 235, 82)' : 'hsl(0, 0%, 73%)';
-  button.style.border = button.isGreen ? '2px solid rgb(52, 235, 82)' : '2px solid hsl(0, 0%, 0%)';
+  button.style.backgroundColor = button.isGreen ? 'hsl(130, 82.10%, 56.30%)' : 'hsl(0, 0%, 73%)';
+  button.style.border = button.isGreen ? '2px solid hsl(130, 82.10%, 26.30%)' : '2px solid hsl(0, 0%, 0%)';
   button.style.color = 'black';
   button.isGreen = !button.isGreen;
 }
