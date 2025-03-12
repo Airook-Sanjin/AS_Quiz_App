@@ -94,8 +94,8 @@ function addAnswerChoice(event) {
   let li = document.createElement('li');
   li.innerHTML = `
     <div class="input-wrapper">
-      <input class="possibleAnswer" type="text" placeholder="Type possible answer here" />
-      <button class='correct-btn'>Select as correct</button>
+      <input class="possibleAnswer" type="text" placeholder="Type answer here" />
+      <button class='btn correct-btn'>Select as correct</button>
     </div>`;
   answerList.appendChild(li);
 }
@@ -110,14 +110,14 @@ new_question_button.addEventListener('click', function () {
             <ul class="answer-list">
                 <li>
                     <div class="input-wrapper">
-                        <input class="possibleAnswer" type="text" placeholder="Type possible answer here" />
-                        <button class="correct-btn">Select as correct</button>
+                        <input class="possibleAnswer" type="text" placeholder="Type answer here" />
+                        <button class="btn correct-btn">Select as correct</button>
                     </div>
                 </li>
                 <li>
                     <div class="input-wrapper">
-                        <input class="possibleAnswer" type="text" placeholder="Type possible answer here" />
-                        <button class="correct-btn">Select as correct</button>
+                        <input class="possibleAnswer" type="text" placeholder="Type answer here" />
+                        <button class="btn correct-btn">Select as correct</button>
                     </div>
                 </li>
             </ul>
@@ -144,8 +144,8 @@ function correct_btn_clicked(button) {
   if (button.isGreen === undefined) {
     button.isGreen = true;
   }
-  button.style.backgroundColor = button.isGreen ? 'rgb(52, 235, 82)' : 'rgb(3, 161, 252)';
-  button.style.border = button.isGreen ? '2px solid rgb(52, 235, 82)' : '2px solid rgb(3, 161, 252)';
+  button.style.backgroundColor = button.isGreen ? 'rgb(52, 235, 82)' : 'hsl(0, 0%, 73%)';
+  button.style.border = button.isGreen ? '2px solid rgb(52, 235, 82)' : '2px solid hsl(0, 0%, 0%)';
   button.style.color = 'black';
   button.isGreen = !button.isGreen;
 }

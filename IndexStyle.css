@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: linear-gradient(100deg, hsl(0, 0%, 0%), hsl(0, 20%, 32%), hsl(0, 40%, 49%),hsl(0, 100%, 50%)) ;
+    /* background-image: linear-gradient(100deg, hsl(0, 0%, 0%), hsl(0, 20%, 32%), hsl(0, 40%, 49%),hsl(0, 100%, 50%)) ; */
     background-repeat:no-repeat;
     /* color: white; */
     font-family: 'Raleway', Arial, sans-serif;
@@ -20,18 +20,7 @@ h2 {
     justify-content: center;
 }
 
-.input-wrapper input {
-    background-color: transparent;
-    border: none;
-    /* color: white; */
-    padding: 3px;
-} 
 
-.input-wrapper input:focus {
-    outline: none;
-    border-bottom: 0.125rem solid rgb(3, 161, 252);
-    transition: 0.2s ease-in;
-}
 /* ------------------------^^^^UNIVERSAL^^^^----------------------- */
 #title {
     text-align: center;
@@ -43,11 +32,13 @@ h2 {
     border: none;
     border-bottom: .15rem solid rgb(120, 120, 120);
 }
+/* -------------VV-Question Section-VV------------- */
 .question-container {
     /* background-color: hsl(0, 0%, 100%,0.5); */
-    gap:.125rem;
+    gap:.250rem;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     width:100%;
     height:36.5rem;
     padding: 2rem;
@@ -55,55 +46,52 @@ h2 {
 .question-block {
     display: flex;
     flex-direction: column;
+    height:min-content;
     font-size: 1.25rem;
     padding-bottom: 0.625rem;
-    border:.125rem solid black;
+    /* border:.125rem solid black; */
 }
-
-.add_buttons {
-    height:2rem;
-    margin: 5px;
-    color: black;
-    background-color: rgb(3, 161, 252);
-    padding: 5px;
-    border: 2px solid rgb(3, 161, 252);
-    border-radius: 10px;
-    font-size: 15px;
-}
-
-.add_buttons:hover {
-    background-color: white;
-    color: black;
-    border: 2px solid white;
-    transition: 0.2s ease-in;
-}
-.answer-choice-btn{
-    width:min-content;
-    background-color: transparent;
-    color:white;
+.question{
+    background-color:hsl(0, 0%, 0%,0.1);
     border:none;
     font-size: large;
-    border-radius: 20px;
+    padding:.250rem;
 }
-
-
+.answer-list{
+    display: flex;
+    flex-direction: column;
+    gap:.250rem
+}
 .input-wrapper {
-    position: relative;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    min-height:2rem;
+    gap:.375rem;
+}
+.input-wrapper:hover button {
+    display: inline-block;
+}
+.possibleAnswer {
+    background-color: transparent;
+    border: none;
+    /* color: white; */
+    padding: 3px;
+} 
+
+.possibleAnswer:focus {
+    outline: none;
+    border-bottom: 0.125rem solid rgb(3, 161, 252);
+    transition: 0.2s ease-in;
 }
 
 ul li input {
     font-size: 20px;
     padding: 5px;
     width: 247px;
-    color:white;
+    /* color:white; */
 }
 
-.input-wrapper button {
-    position: absolute;
-    left: 250px;
-    top: 50%;
-    transform: translateY(-50%);
+.correct-btn{
     display: none;
     background-color: rgb(3, 161, 252);
     color: black;
@@ -112,37 +100,48 @@ ul li input {
     border-radius: 5px;
 }
 
-.input-wrapper button:hover {
+.correct-btn:hover {
     background-color: white;
     border-color: white;
     color: black;
-    transition: 0.2s ease-in;
+    transition: 0.5s ease-in;
 }
 
-.input-wrapper:hover button {
-    display: inline-block;
+
+
+.btn {
+    height:2rem;
+    margin: 5px;
+    color: black;
+    background-color: hsl(0, 0%, 73%);
+    padding: 5px;
+    border: 2px solid hsl(0, 0%, 0%);
+    border-radius: 10px;
+    font-size: 15px;
 }
+
+.btn:hover {
+    background-color: hsl(0, 0%, 87%);
+    color: black;
+    border: 2px solid hsl(0, 0%, 73%);
+    transition: 0.2s ease-in;
+}
+.answer-choice-btn{
+    width:min-content;
+    background-color: transparent;
+    color:black;
+    border:none;
+    font-size: large;
+    border-radius: 20px;
+}
+
+
 
 .button-container {
     display: flex;
     justify-content: center;
 }
 
-.button-container button {
-    color: black;
-    background-color: rgb(3, 161, 252);
-    padding: 5px 60px;
-    border: 2px solid rgb(3, 161, 252);
-    border-radius: 10px;
-    font-size: 25px;
-}
-
-.button-container button:hover {
-    background-color: white;
-    color: black;
-    border: 2px solid white;
-    transition: 0.2s ease-in;
-}
 
 
 
