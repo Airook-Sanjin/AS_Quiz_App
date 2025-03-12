@@ -72,7 +72,7 @@ function initializeQuizPage() {
 }
 
 function initializeQuestionPage() {
-let add_button_container = document.querySelector('.add-button-container');
+let add_button_container = document.querySelector('.question-container');
 
 // Attach listener for initial "Add Answer Choice" button
 let firstAnswerChoiceBtn = document.querySelector('.answer-choice-btn');
@@ -94,8 +94,8 @@ function addAnswerChoice(event) {
   let li = document.createElement('li');
   li.innerHTML = `
     <div class="input-wrapper">
-      <input class="possibleAnswer" type="text" placeholder="Type possible answer here" />
-      <button class='correct-btn'>Select as correct</button>
+      <input class="possibleAnswer" type="text" placeholder="Type answer here" />
+      <button class='btn correct-btn'>Select as correct</button>
     </div>`;
   answerList.appendChild(li);
 }
@@ -106,26 +106,28 @@ new_question_button.addEventListener('click', function () {
   let newQuestionId = `question-${document.querySelectorAll('.question-block').length + 1}`;
   let questionBlock = `
     <div class="question-block" id="${newQuestionId}">
-      <input class="question" type="text" placeholder="Type Question Here" />
-      <ul class="answer-list">
-        <li>
-          <div class="input-wrapper">
-            <input class="possibleAnswer" type="text" placeholder="Type possible answer here" />
-            <button class="correct-btn">Select as correct</button>
-          </div>
-        </li>
-        <li>
-          <div class="input-wrapper">
-            <input class="possibleAnswer" type="text" placeholder="Type possible answer here" />
-            <button class="correct-btn">Select as correct</button>
-          </div>
-        </li>
-      </ul>
-      <button class="add_buttons answer-choice-btn">Add Answer Choice Above</button>
+     <input class="question" type="text" placeholder="Type Question Here" />
+            <ul class="answer-list">
+                <li>
+                    <div class="input-wrapper">
+                        <input class="possibleAnswer" type="text" placeholder="Type answer here" />
+                        <button class="btn correct-btn">Select as correct</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="input-wrapper">
+                        <input class="possibleAnswer" type="text" placeholder="Type answer here" />
+                        <button class="btn correct-btn">Select as correct</button>
+                    </div>
+                </li>
+            </ul>
+            <button class="add_buttons answer-choice-btn">
+                <ion-icon name="add-circle-outline"></ion-icon>
+            </button>
     </div>
   `;
 
-  add_button_container.insertAdjacentHTML('beforebegin', questionBlock);
+  add_button_container.insertAdjacentHTML('beforeend', questionBlock);
 
   // Re-attach event listener for newly added "Add Answer Choice" buttons
   attachAnswerChoiceListener();
@@ -142,8 +144,8 @@ function correct_btn_clicked(button) {
   if (button.isGreen === undefined) {
     button.isGreen = true;
   }
-  button.style.backgroundColor = button.isGreen ? 'rgb(52, 235, 82)' : 'rgb(3, 161, 252)';
-  button.style.border = button.isGreen ? '2px solid rgb(52, 235, 82)' : '2px solid rgb(3, 161, 252)';
+  button.style.backgroundColor = button.isGreen ? 'hsl(130, 82.10%, 56.30%)' : 'hsl(0, 0%, 73%)';
+  button.style.border = button.isGreen ? '2px solid hsl(130, 82.10%, 26.30%)' : '2px solid hsl(0, 0%, 0%)';
   button.style.color = 'black';
   button.isGreen = !button.isGreen;
 }
